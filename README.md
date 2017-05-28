@@ -44,29 +44,35 @@ There are two right now, first the software based voxlap renderer and a much new
 - *OpenGL*: http://github.com/xtreme8000/aof-opengl
 
 Follow the compile steps for your choosen renderer module and procede here after you've copied the renderer's ```renderer.d``` file here as well as other required library files.
-
 #### On Linux/any POSIX-compliant OSes
-1. If you are using Debian or Ubuntu and don't have these installed already:
+1. Download and install prerequisites, if not already installed (Debian or Ubuntu):
+	Open a command terminal and type:
 	```
-	sudo apt-get install libsdl2-dev libsdl2-image-dev libpng-dev libjpeg-dev libtiff-dev libenet-dev zlib1g-dev libvorbis-dev libopenal-dev git -y
+	sudo apt-get install libsdl2-dev libsdl2-image-dev libpng-dev libjpeg-dev libtiff-dev libenet-dev zlib1g-dev libvorbis-dev libopenal-dev libslang2-dev git -y
 	```
-	If not, install the dev libraries of SDL2, SDL2_image, libpng, libjpeg, libtiff, ENet, zlib vorbis, OpenAL and git the way you would do it on your OS.
+2. Copy the Voxel-War files:
+	Create a new directory:
+	```
+	mkdir VXW
+	```
 	
-	(You can get the Voxlap renderer with ./setup_voxlap_renderer)
-
-2. Open a terminal in this directory and write
-
+	Download Voxel-War
+	```
+	git clone https://github.com/LeComm/vxw-client
+	```
+3. Get the voxlap renderer:
+	```
+	./setup_voxelap_renderer
+	```
+4. Download some requisites from github:
 	```
 	./configure
 	```
-
-	to download some files from external sources
-
+5. Copile the source:
 	```
 	make
 	```
-
-	to compile the source (the make script supports several different compilers, "make ll" will compile with LLVM's LTO, which produces the fastest code of all)
+	Hint: the make script supports several different compilers, "make ll" will compile with LLVM's LTO, which produces the fastest code of all
 
 
 #### On Windows
